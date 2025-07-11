@@ -17,10 +17,10 @@ namespace Teste_Cadastro.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll(string search = "")
+        public IActionResult GetAll(string search = "", int page =0, int size = 10)
         {
             var enderecos = _context.Enderecos
-                .Where(d => !d.IsDeleted)                
+                .Where(d => !d.IsDeleted && (search == "" || d.Logradouro.Contains(search)))                
                 .AsNoTracking()
                 .ToList();
 

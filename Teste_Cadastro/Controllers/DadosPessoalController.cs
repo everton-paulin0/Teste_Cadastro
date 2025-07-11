@@ -18,9 +18,9 @@ namespace Teste_Cadastro.Controllers
         [HttpGet]        
         public IActionResult GetAll(string search ="")
         {
-            var dadosPessoais = _context.DadosPessoais
-                .Where(d => !d.IsDeleted)
+            var dadosPessoais = _context.DadosPessoais                
                 .Include(d => d.Endereco)
+                .Where(d => !d.IsDeleted && (search == "" || d.Nome.Contains(search)))
                 .AsNoTracking()
                 .ToList();
 
