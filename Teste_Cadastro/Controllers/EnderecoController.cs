@@ -6,7 +6,7 @@ using Teste_Cadastro.Models;
 
 namespace Teste_Cadastro.Controllers
 {
-    [Route("api/endereco")]
+    [Route("api/enderecos")]
     [ApiController]
     public class EnderecoController : ControllerBase
     {

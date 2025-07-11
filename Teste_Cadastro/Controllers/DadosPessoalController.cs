@@ -6,7 +6,7 @@ using Teste_Cadastro.Models;
 
 namespace Teste_Cadastro.Controllers
 {
-    [Route("api/dadosPessoal")]
+    [Route("api/pessoas")]
     [ApiController]
     public class DadosPessoalController : ControllerBase
     {
